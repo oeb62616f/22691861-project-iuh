@@ -13,12 +13,11 @@
 #define MAX_ID  9999
 
 // Creating functions
-float banking_fee(int id, char type_id, int withdraw_time);
-
-
+float banking_fee(int id, char type_id, int withdraw_time, int count);
 
 // Creating variables
     // Input
+int account_count;
 int cust_id;
 int with_drawals;
 char account_type;
@@ -28,26 +27,36 @@ float bank_charge;
 // Main
 int main()
 {
-    // Input cust_id
-    printf("CustID: ");
-    scanf("%d", &cust_id);
 
-    // Input account_type
-    printf("Account Type: ");
-    scanf(" %c", &account_type);
+    // Input account_count
+    printf("Number of account bank: ");
+    scanf("%d", &account_count);
 
-    // Input with_drawals
-    printf("Withdrawals:");
-    scanf("%d", &with_drawals);
+    for(int i = 0; i < account_count; i++)
+    {
+        // Input cust_id
+        printf("CustID: ");
+        scanf("%d", &cust_id);
 
-    bank_charge = banking_fee(cust_id,account_type,with_drawals);
-    printf("BankCharge: %.2f ", bank_charge);
+        // Input account_type
+        printf("Account Type: ");
+        scanf(" %c", &account_type);
 
+        // Input with_drawals
+        printf("Withdrawals:");
+        scanf("%d", &with_drawals);
+
+        printf("---End of input---\n");
+
+        bank_charge = banking_fee(cust_id,account_type,with_drawals,account_count);
+        printf("BankCharge: %.2f \n", bank_charge);
+        printf("---End of output---\n");
+    }
     return 1;
 }
 
 
-float banking_fee(int id, char type_id, int withdraw_time)
+float banking_fee(int id, char type_id, int withdraw_time, int count)
 {
     
     float bank_charge = 0;
@@ -121,7 +130,11 @@ float banking_fee(int id, char type_id, int withdraw_time)
                 bank_charge += (withdraw_time - BANK_FEE_WITHDRAWALS_TIME_OVER) * BANK_FEE_WITHDRAWALS_OVER;
             }
         }
+    }
 
+    if(count > 2)
+    {
+        return bank_charge + 5.0;
     }
 
     return bank_charge;
