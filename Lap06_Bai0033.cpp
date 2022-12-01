@@ -1,6 +1,6 @@
 /*
 
-Project: Bai0029
+Project: Bai0033
     - Nguyen Gia Bao: Do all of them with the help of his teacher
 
 Aim: show factorial

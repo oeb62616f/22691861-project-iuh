@@ -1,6 +1,6 @@
 /*
 
-Project: Lap_No6 problem 4
+Project: Lap_No6 problem 
     - Nguyen Gia Bao: Do all of them with the help of his teacher
 
 Aim:

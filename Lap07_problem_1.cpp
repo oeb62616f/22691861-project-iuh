@@ -8,7 +8,7 @@ Aim: get input n until 0 <= n <= 100
 Solution:
     - Using do while
 
-Date: 11/11/2022
+Date: 23/07/2004
 
 */
 

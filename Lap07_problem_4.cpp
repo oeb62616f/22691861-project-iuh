@@ -8,7 +8,7 @@ Aim: sum
 Solution:
     - Using while do
 
-Date: 11/11/2022
+Date: 23/07/2004
 
 */
 

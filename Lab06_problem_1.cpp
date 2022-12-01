@@ -18,10 +18,10 @@ Date: 30/10/2022
 int main()
 {
 
-for (int i=1;i<=10;i++)
-{
-printf("%d. Xin loi!\n", i);
-}
+    for (int i = 1; i <= 10; i++)
+    {
+        printf("%d. Xin loi!\n", i);
+    }
 
     return 1;
 }

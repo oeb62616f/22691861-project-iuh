@@ -1,38 +1,82 @@
+/*
+
+Project: Lap_No6 problem 5
+	- Nguyen Gia Bao: Do all of them with the help of his teacher
+
+Aim:
+
+Solution:
+
+Date: 11/11/2022
+
+*/
+
+// Include
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-void hinh1(int h, int i, int j)
+// Creating
+void draw_triangle(int height);
+void draw_reverse_triangle(int height);
+void draw_rectangle_fill(int height);
+void draw_rectangle_empty(int height);
+void draw_isosceles_triangle(int height);
+
+// Creating variables
+int i;
+int j;
+int height;
+
+// Main
+int main()
 {
-	for (i = 1; i <= h; i++)
+	printf("Nhap chieu cao h: ");
+	scanf("%d", &height);
+
+	draw_triangle(height);
+	draw_reverse_triangle(height);
+	draw_rectangle_fill(height);
+	draw_rectangle_empty(height);
+	draw_isosceles_triangle(height);
+
+	return 0;
+}
+
+void draw_triangle(int h)
+{
+	for (int i = 1; i <= h; i++)
 	{
-		for (j = 1; j <= i; j++)
+		for (int j = 1; j <= i; j++)
 		{
 			printf("*");
 		}
 		printf("\n");
 	}
+	printf("\n");
 }
-void hinh2(int h, int i, int j)
+
+void draw_reverse_triangle(int h)
 {
-	for (i = 1; i <= h; i++)
+	for (int i = 1; i <= h; i++)
 	{
-		for (j = 1; j < i + 1; j++)
+		for (int j = 1; j < i; j++)
 		{
 			printf(" ");
 		}
-		for (j = 0; j < h - i; j++)
+		for (int j = 0; j < h - i + 1; j++)
 		{
 			printf("*");
 		}
 		printf("\n");
 	}
+	printf("\n");
 }
-void hinh3(int h, int i, int j)
+
+void draw_rectangle_fill(int h)
 {
-	for (i = 0; i < h; i++)
+	for (int i = 0; i < h; i++)
 	{
-		for (j = 0; j < h; j++)
+		for (int j = 0; j < h; j++)
 		{
 			if (j == 0 || i == h - 1 || i == j)
 			{
@@ -45,24 +89,28 @@ void hinh3(int h, int i, int j)
 		}
 		printf("\n");
 	}
+	printf("\n");
 }
-void hinh4(int h, int i, int j)
+
+void draw_rectangle_empty(int h)
 {
-	for (i = 0; i < h - i; i++)
+	for (int i = 0; i < h - i; i++)
 	{
-		for (j = 0; j < h; j++)
+		for (int j = 0; j < h; j++)
 		{
 			printf("*");
 		}
 
 		printf("\n");
 	}
+	printf("\n");
 }
-void hinh5(int h, int i, int j)
+
+void draw_isosceles_triangle(int h)
 {
-	for (i = 0; i <= h - i; i++)
+	for (int i = 0; i <= h - i; i++)
 	{
-		for (j = 0; j <= h; j++)
+		for (int j = 0; j <= h; j++)
 		{
 			if (i == 0 || i == h || j == 0 || j == h || i == h / 2)
 			{
@@ -73,23 +121,7 @@ void hinh5(int h, int i, int j)
 				printf(" ");
 			}
 		}
-
 		printf("\n");
 	}
-}
-int main(int argc, char *argv[])
-{
-	int h, i, j;
-	printf("\n hay nhap chieu cao h: ");
-	scanf("%d", &h);
-	hinh1(h, i, j);
 	printf("\n");
-	hinh2(h, i, j);
-	printf("\n");
-	hinh3(h, i, j);
-	printf("\n");
-	hinh4(h, i, j);
-	printf("\n");
-	hinh5(h, i, j);
-	return 0;
 }
