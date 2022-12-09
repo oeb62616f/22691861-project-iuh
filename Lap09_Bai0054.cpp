@@ -29,26 +29,24 @@ int main()
     printf("Value of input: ");
     scanf("%d", &n);
 
-    for (int i = 1; i <= n; i++)
-    {
-        if (is_hoan_hao(i))
-        {
-            printf("%d ", i);
-        }
-    }
-
     return 1;
 }
 
 bool is_hoan_hao(int n)
 {
-    int sum = 1;
-    for (int i = 2; i <= sqrt(n); i++)
+    int sum;
+    for (int i = 1; i <= n; i++)
     {
         if (n % i == 0)
         {
             sum += i;
         }
     }
-    return sum == n ? true : false;
+
+    if (n * 2 == sum)
+    {
+        return true;
+    }
+
+    return false;
 }
