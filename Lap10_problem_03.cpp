@@ -193,6 +193,7 @@ void array_insert(int *arr, int *length, int index, int value)
     }
     arr[index] = value;
 }
+
 void array_delete(int *arr, int *length, int index)
 {
     arr[index] = 0;
@@ -203,6 +204,7 @@ void array_delete(int *arr, int *length, int index)
     *length -= 1;
     realloc(arr, *length);
 }
+
 void array_sort(int *arr, int length)
 {
     for (int *i = arr; i < arr + length; i++)

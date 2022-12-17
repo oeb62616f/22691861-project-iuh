@@ -26,8 +26,7 @@ int main()
     for (int *i = arr; i < arr + n; i++)
     {
         *i = index;
-        index++;
-        
+        index++;   
     }
     int arr_copy[n];
     for (int i = 0; i < n; i++)
