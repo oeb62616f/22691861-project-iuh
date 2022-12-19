@@ -31,7 +31,7 @@ void check_in();
 float time_in;
 float time_out;
 int money_pay;
-int total_bike;
+int total_id_bike;
 int total_time;
 int total_money;
 float average_time;
@@ -44,10 +44,10 @@ int main()
 
     while (is_stop)
     {
-        total_bike++;
-        printf("Bike %d time in: ", total_bike);
+        total_id_bike++;
+        printf("Bike %d time in: ", total_id_bike);
         scanf("%f", &time_in);
-        printf("Bike %d time out: ", total_bike);
+        printf("Bike %d time out: ", total_id_bike);
         scanf("%f", &time_out);
 
         is_stop = (time_out - time_in) == 0? false: true;
@@ -59,12 +59,12 @@ int main()
         total_time += (time_out - time_in);
     }
 
-    total_bike--;
+    total_id_bike--;
 
-    average_time = total_time / total_bike;
-    average_money = total_money / total_bike;
+    average_time = total_time / total_id_bike;
+    average_money = total_money / total_id_bike;
 
-    printf("Total bike: %d\n", total_bike);
+    printf("Total bike: %d\n", total_id_bike);
     printf("Total time: %d\n", total_time);
     printf("Total money: %d\n", total_money);
     printf("Average time: %f\n", average_time);
